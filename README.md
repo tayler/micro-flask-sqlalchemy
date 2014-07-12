@@ -14,6 +14,7 @@ The SQLAlchemy setup is a synthesis from a number of sources (thanks to to them 
     - http://flask.pocoo.org/docs/patterns/sqlalchemy/  
     - https://pythonhosted.org/Flask-SQLAlchemy/quickstart.html  
     - http://www.realpython.com/blog/python/flask-by-example-part-2-postgres-sqlalchemy-and-alembic/  
+    - http://exploreflask.com/storing.html  
 It is setup in the declarative style, so some tutorials will be different than what you see here.
 
 ###Project Structure
