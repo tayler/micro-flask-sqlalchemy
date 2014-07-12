@@ -11,9 +11,9 @@ I'm new to Flask and Python, and I wanted a decent starting point for new Flask 
 The app structure setup is mostly from the Package structure in [Explore Flask](http://exploreflask.com/organizing.html#organization-patterns), but some stuff was filled in from the Flask tutorial at [Real Python](http://www.realpython.com/blog/python/python-web-applications-with-flask-part-i/).
 
 The SQLAlchemy setup is a synthesis from a number of sources (thanks to to them for writing all of this down):
-    - http://flask.pocoo.org/docs/patterns/sqlalchemy/
-    - https://pythonhosted.org/Flask-SQLAlchemy/quickstart.html
-    - http://www.realpython.com/blog/python/flask-by-example-part-2-postgres-sqlalchemy-and-alembic/
+    - http://flask.pocoo.org/docs/patterns/sqlalchemy/  
+    - https://pythonhosted.org/Flask-SQLAlchemy/quickstart.html  
+    - http://www.realpython.com/blog/python/flask-by-example-part-2-postgres-sqlalchemy-and-alembic/  
 It is setup in the declarative style, so some tutorials will be different than what you see here.
 
 ###Project Structure
