@@ -8,7 +8,10 @@ The repo. contains just enough to get a new Flask app off the ground. No Bootstr
 
 I'm new to Flask and Python, and I wanted a decent starting point for new Flask apps, something where I understood all the moving parts.
 
-The setup is mostly from the Package structure in [Explore Flask](http://exploreflask.com/organizing.html#organization-patterns), but some stuff was filled in from the Flask tutorial at [Real Python](http://www.realpython.com/blog/python/python-web-applications-with-flask-part-i/).
+The app structure setup is mostly from the Package structure in [Explore Flask](http://exploreflask.com/organizing.html#organization-patterns), but some stuff was filled in from the Flask tutorial at [Real Python](http://www.realpython.com/blog/python/python-web-applications-with-flask-part-i/).
+
+The SQLAlchemy setup is from
+It is setup in the declarative style, so some tutorials will be different than what you see here.
 
 ###Project Structure
 
@@ -24,7 +27,7 @@ The setup is mostly from the Package structure in [Explore Flask](http://explore
     ├── forms.py
     ├── models.py
     ├── static/
-	|	├── img
+	│	├── img
     │   ├── js
     │   │   ├── main.js
     │   │   └── vendors/
@@ -41,10 +44,21 @@ See [Explore Flask](http://exploreflask.com/organizing.html#organization-pattern
 ###Setup
 
 1. Clone this repo
-2. Change package name (currently yourappname) to the name of your app
-3. Repeat for `import` statement in run.py
+2. Change package name directory (currently yourappname) to the name of your app
+3. Repeat for the `import` statement in run.py, in models.py, and in the `init_db` function in database.py
 4. Setup virtualenv for this directory & activate (because I always forget, virtualenvwrapper command is `mkvirtualenv <env-name>`)
-5. Create an instance/ dir containing a config.py file
+5. Create an `instance/` dir containing a `config.py` file in the root directory
 6. `pip install -r requirements.txt`
+
+####SQLAlchemy
+1. Change database uri in `config.py` where `SQLALCHEMY_DATABASE_URI` is declared (see http://docs.sqlalchemy.org/en/rel_0_9/core/engines.html for possibilities)
+2. Define your models in `yourappname/models.py`
+3. Get your database tables set up (With Postgresql, I found out you have to set up your database before you can `init_db()`. Other DB engines might be different.):
+4. create db in psql (or elsewhere): `CREATE DATABASE projproj;`
+5. Run these commands in root of project dir to create tables based on your models:  
+    a. `python`  
+    b. `from yourappname.database import init_db`  
+    c. `init_db()` (this should create the tables defined in the models imported in init_db below `import projproj.models`)  
+6. Check that SQLAlchemy created your tables (can use psql or some other tool; in psql, the command to see the tables is `\c yourappdatabase \dt`)
 7. `python run.py`
 8. Navigate to 127.0.0.1:5000 in your browser to test it out
